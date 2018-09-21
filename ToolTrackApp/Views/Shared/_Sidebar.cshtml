@@ -1,0 +1,203 @@
+@using ToolTrackApp.Model.Entities.ResourceRegion;
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+    <nav class="sidebar" data-sidebar-anyclick-close="">
+        <!-- START sidebar nav-->
+        <ul class="nav">
+            <!-- START user info-->
+            <li class="has-user-block">
+                <div id="user-block" class="collapse">
+                    <div class="item user-block">
+                        <!-- User picture-->
+                        <div class="user-block-picture">
+                            <div class="user-block-status">
+                                <img src="~/Content/Images/user/02.jpg" alt="Avatar" width="60" height="60" class="img-thumbnail img-circle" />
+                                <div class="circle circle-success circle-lg"></div>
+                            </div>
+                        </div>
+                        <!-- Name and Job-->
+                        <div class="user-block-info">
+                            <span class="user-block-name">Hello, Mike</span>
+                            <span class="user-block-role">Designer</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- END user info-->
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading">
+                <span>@Resource.Administration</span>
+            </li>
+            <li class="">
+                <a href="#users" title="@Resource.Users" data-toggle="collapse">
+                    <em class="icon-user"></em>
+                    <span>@Resource.Users</span>
+                </a>
+                <ul id="users" class="nav sidebar-subnav collapse">
+                    <li class="sidebar-subnav-header">@Resource.Users</li>
+                    <li class="">
+                        <a href="@Url.Action("Index", "User")" title="@Resource.CreateUser">
+                            <span>@Resource.CreateUser</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.ReadUser">
+                            <span>@Resource.ReadUser</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.UpdateUser">
+                            <span>@Resource.UpdateUser</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.DeleteUser">
+                            <span>@Resource.DeleteUser</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="">
+                <a href="#materials" title="@Resource.Parts" data-toggle="collapse">
+                    <em class="icon-paper-clip"></em>
+                    <span>@Resource.Parts</span>
+                </a>
+                <ul id="materials" class="nav sidebar-subnav collapse">
+                    <li class="sidebar-subnav-header">@Resource.Parts</li>
+                    <li class="">
+                        <a href="@Url.Action("CurrentPosition", "Tracking")" title="@Resource.CreateParts">
+                            <span>@Resource.CreateParts</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.ReadParts">
+                            <span>@Resource.ReadParts</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.UpdateParts">
+                            <span>@Resource.UpdateParts</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.DeleteParts">
+                            <span>@Resource.DeleteParts</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#location" title="@Resource.Location" data-toggle="collapse">
+                    <em class="icon-location-pin"></em>
+                    <span>@Resource.Location</span>
+                </a>
+                <ul id="location" class="nav sidebar-subnav collapse">
+                    <li class="sidebar-subnav-header">@Resource.Location</li>
+                    <li class="">
+                        <a href="@Url.Action("CurrentPosition", "Tracking")" title="@Resource.CreateLocation">
+                            <span>@Resource.CreateLocation</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.ReadLocation">
+                            <span>@Resource.ReadLocation</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.UpdateLocation">
+                            <span>@Resource.UpdateLocation</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.DeleteLocation">
+                            <span>@Resource.DeleteLocation</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="">
+                <a href="#location" title="@Resource.Provider" data-toggle="collapse">
+                    <em class="icon-user-following"></em>
+                    <span>@Resource.Provider</span>
+                </a>
+                <ul id="location" class="nav sidebar-subnav collapse">
+                    <li class="sidebar-subnav-header">@Resource.Provider</li>
+                    <li class="">
+                        <a href="@Url.Action("CurrentPosition", "Tracking")" title="@Resource.CreateProvider">
+                            <span>@Resource.CreateProvider</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.ReadProvider">
+                            <span>@Resource.ReadProvider</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.UpdateProvider">
+                            <span>@Resource.UpdateProvider</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.DeleteProvider">
+                            <span>@Resource.DeleteProvider</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-heading">
+                <span>@Resource.Storage</span>
+            </li>
+            <li class="">
+                <a href="#storage" title="@Resource.Storage" data-toggle="collapse">
+                    <em class="icon-notebook"></em>
+                    <span>@Resource.Storage</span>
+                </a>
+                <ul id="storage" class="nav sidebar-subnav collapse">
+                    <li class="sidebar-subnav-header">@Resource.Storage</li>
+                    <li class="">
+                        <a href="@Url.Action("CurrentPosition", "Tracking")" title="@Resource.Entrance">
+                            <span>@Resource.Entrance</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("Paths", "Tracking")" title="@Resource.Exit">
+                            <span>@Resource.Exit</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.Return">
+                            <span>@Resource.Return</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("SetGeoFences", "SetGeoFence")" title="@Resource.Kardex">
+                            <span>@Resource.Kardex</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+
+            <li class="">
+                <a href="#reports" title="@Resource.Reports" data-toggle="collapse">
+                    <em class="icon-chart"></em>
+                    <span>@Resource.Reports</span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="#alarms" title="@Resource.Alarms" data-toggle="collapse">
+                    <em class="icon-clock"></em>
+                    <span>@Resource.Alarms</span>
+                </a>
+            </li>
+        </ul>
+        <!-- END sidebar nav-->
+    </nav>
+</div>
+<!-- END Sidebar (left)-->

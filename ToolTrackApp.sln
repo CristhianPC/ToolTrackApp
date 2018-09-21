@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp", "ToolTrackApp\ToolTrackApp.csproj", "{3F77039E-98BD-4A12-8424-63089207EEB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp.WebUI", "ToolTrackApp\ToolTrackApp.WebUI.csproj", "{3F77039E-98BD-4A12-8424-63089207EEB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-WebUI", "04-WebUI", "{7116EE3B-CA6A-4D99-91C4-3D467ED2AE02}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01-Model", "01-Model", "{59EE9302-4DFA-4FA1-8C37-3231C47EB961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp.Model.Entities", "ToolTrackApp.Model.Entities\ToolTrackApp.Model.Entities.csproj", "{0D47328C-5798-4FB1-973A-234FCE7D9D3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp.Model.SqlRepository", "ToolTrackApp.Model.SqlRepository\ToolTrackApp.Model.SqlRepository.csproj", "{ED605895-F72C-4249-A779-089CA22140F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02-Domain", "02-Domain", "{B0F00E68-B251-4B5A-862D-2C9C1A57BF78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp.Domain", "ToolTrackApp.Domain\ToolTrackApp.Domain.csproj", "{49332E05-DA48-4678-A4F0-A9C227EC7C7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolTrackApp.Domain.Interfaces", "ToolTrackApp.Domain.Interfaces\ToolTrackApp.Domain.Interfaces.csproj", "{E2D54560-051D-42E3-9C5E-234E2643C588}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +29,31 @@ Global
 		{3F77039E-98BD-4A12-8424-63089207EEB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F77039E-98BD-4A12-8424-63089207EEB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F77039E-98BD-4A12-8424-63089207EEB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D47328C-5798-4FB1-973A-234FCE7D9D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D47328C-5798-4FB1-973A-234FCE7D9D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D47328C-5798-4FB1-973A-234FCE7D9D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D47328C-5798-4FB1-973A-234FCE7D9D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED605895-F72C-4249-A779-089CA22140F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED605895-F72C-4249-A779-089CA22140F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED605895-F72C-4249-A779-089CA22140F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED605895-F72C-4249-A779-089CA22140F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49332E05-DA48-4678-A4F0-A9C227EC7C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49332E05-DA48-4678-A4F0-A9C227EC7C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49332E05-DA48-4678-A4F0-A9C227EC7C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49332E05-DA48-4678-A4F0-A9C227EC7C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D54560-051D-42E3-9C5E-234E2643C588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D54560-051D-42E3-9C5E-234E2643C588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D54560-051D-42E3-9C5E-234E2643C588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D54560-051D-42E3-9C5E-234E2643C588}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F77039E-98BD-4A12-8424-63089207EEB9} = {7116EE3B-CA6A-4D99-91C4-3D467ED2AE02}
+		{0D47328C-5798-4FB1-973A-234FCE7D9D3F} = {59EE9302-4DFA-4FA1-8C37-3231C47EB961}
+		{ED605895-F72C-4249-A779-089CA22140F7} = {59EE9302-4DFA-4FA1-8C37-3231C47EB961}
+		{49332E05-DA48-4678-A4F0-A9C227EC7C7F} = {B0F00E68-B251-4B5A-862D-2C9C1A57BF78}
+		{E2D54560-051D-42E3-9C5E-234E2643C588} = {B0F00E68-B251-4B5A-862D-2C9C1A57BF78}
 	EndGlobalSection
 EndGlobal

@@ -2,43 +2,97 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>@ViewBag.Title</title>
+    @{ var idioma = System.Globalization.CultureInfo.CurrentCulture.Name; }
+    <!-- =============== STYLES ===============-->
+    @Styles.Render("~/bundles/fontawesome")
+    @Styles.Render("~/bundles/simpleLineIcons")
+    @Styles.Render("~/bundles/animatecss")
+    @Styles.Render("~/bundles/whirl")
+
+    <!-- =============== PAGE STYLES =============== -->
+    @if (IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", required: false)}
+
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link href="@Styles.Url("~/Content/app/css/bootstrap.css")" rel="stylesheet" type="text/css" id="bscss" />
+
+    <!-- =============== APP STYLES ===============-->
+    <link href="@Styles.Url("~/Content/app/css/app.css")" rel="stylesheet" type="text/css" id="maincss" />
+    <link href="@Styles.Url("~/Content/mvc-override.css")" rel="stylesheet" type="text/css" />
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUtil")
+
+    <!-- =============== SCRIPTS ===============-->
+    <script>
+        //Seteamos la variable gloabal idioma para conocer que idioma se debe seleccionar
+        window.idioma = '@idioma';
+        window.pathToActionJson = '@Url.Content("~")';
+        window.languageMessages = lee_json("Scripts/JsonMsg/mensajes-" + window.idioma, true);
+
+        function GetUrl(actionName, controllerName) {
+            controllerName = controllerName || '@ViewContext.RouteData.Values["Controller"]';
+            var pathToAction = '@Url.Content("~")';
+            if (pathToAction == "/")
+                pathToAction = "";
+            else
+                pathToAction = pathToAction.substring(0, pathToAction.length - 1);
+            return pathToAction + "/" + controllerName + "/" + actionName;
+        }
+    </script>
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <div class="wrapper">
+        <!-- top navbar-->
+        <header class="topnavbar-wrapper">
+            @Html.Partial("_TopNavbar")
+        </header>
+        <!-- sidebar-->
+        <aside class="aside">
+            @Html.Partial("_Sidebar")
+        </aside>
+        <!-- offsidebar-->
+        <aside class="offsidebar hide">
+            @Html.Partial("_Offsidebar")
+        </aside>
+        <!-- Main section-->
+        <section>
+            <!-- Page content-->
+            <div id="div-wrapper" class="content-wrapper">
+
+                @RenderBody()
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
+        </section>
+        <!-- Page footer-->
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            @Html.Partial("_Footer")
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    @if (IsSectionDefined("BodyArea"))
+    {
+        @RenderSection("BodyArea", required: false)
+    }
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/matchMedia")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/storage")
+    @Scripts.Render("~/bundles/jqueryEasing")
+    @*@Scripts.Render("~/bundles/animo")*@
+    @*@Scripts.Render("~/bundles/slimscroll")*@
+    @*@Scripts.Render("~/bundles/screenfull")
+        @Scripts.Render("~/bundles/localize")
+        @Scripts.Render("~/bundles/demoRTL")*@
+
+    <!-- =============== PAGE SCRIPTS ===============-->
     @RenderSection("scripts", required: false)
+
+    <!-- =============== APP SCRIPTS ===============-->
+    @Scripts.Render("~/bundles/ToolTrack")
 </body>
 </html>

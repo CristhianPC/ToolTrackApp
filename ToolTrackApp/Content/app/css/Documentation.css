@@ -1,0 +1,50 @@
+﻿body {
+}
+
+.red-alert {
+    background-color: #e24242;
+}
+
+.yelow-alert {
+    background-color: #c0c71b;
+}
+
+.green-alert {
+    background-color: #0baa18;
+}
+
+.gray-alert {
+    background-color: #86a8b9;  
+}
+
+.red {
+    background: #e24242;
+    border-radius: 0.8em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.grey {
+    background: #86a8b9;
+    border-radius: 0.8em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.green {
+    background: #0baa18;
+    border-radius: 0.8em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
+
+.yellow {
+    background: #c0c71b;
+    border-radius: 0.8em;
+    margin-right: 15px;
+    text-align: center;
+    width: 1.6em;
+}
